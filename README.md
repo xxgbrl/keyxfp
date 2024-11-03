@@ -1,7 +1,6 @@
 keybox and fingerprint generator
 
-fp.sh for fingerprint 
-key.sh for keybox
+fp.sh for fingerprint and key.sh for keybox
 
 need:
 1. busybox for android ndk by osm0sis
