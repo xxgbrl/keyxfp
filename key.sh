@@ -93,7 +93,7 @@ $ecdsa_key
 $rsa_key
 </Keybox>
 </AndroidAttestation>
-# Citra-Standalone, CITraces - https://t.me/citraintegritytrick/3 - Citra, a standalone implementation, leaves a trace in IoT.
+# Citra-Standalone x Ox010b
 EOF
     mv "$DIR/keybox.xml" /storage/emulated/0/citra/keybox.xml
     [ -f /storage/emulated/0/citra ] && echo "> Successfully retrieved keybox.xml"
@@ -102,7 +102,4 @@ else
 fi
 
 # Clean up
-cleaner
-killall -v com.google.android.gms >> /dev/null
-killall -v com.google.android.gms.unstable >> /dev/null
 echo "=== ENDED ==="

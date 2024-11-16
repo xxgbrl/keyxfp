@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-echo -e "\n=== CIT PIF.json Generator ( Pixel Beta ) ==="
+echo -e "\n=== CIT pif.json Generator ( Pixel Beta ) ==="
 
 # Setting Directory
 MODPATH=${0%/*}
@@ -142,8 +142,6 @@ if [ -d /data/adb/modules/playintegrityfix ]; then
         fi
         cat <<EOF > $MODPATH/custom.pif.json
 {
-  // Citra-Standalone, CITraces - https://t.me/citraintegritytrick/3 - Citra, a standalone implementation, leaves a trace in IoT.
-  
   // Build Fields
   "MANUFACTURER": "Google",
   "MODEL": "$MODEL",
@@ -170,7 +168,8 @@ if [ -d /data/adb/modules/playintegrityfix ]; then
   "spoofProvider": "$spoofprovider",
   "spoofSignature": "$spoofsignature",
   "verboseLogs": "0"
-} //Citra-Standalone
+}
+// Citra-Standalone x Ox010b
 EOF
         echo "> Successfully generated custom.pif.json."
         su -c "mv $MODPATH/custom.pif.json /storage/emulated/0/citra/custom.pif.json"
@@ -179,8 +178,6 @@ EOF
         key spoofSignature true false spoofsignature
         cat <<EOF > pif.json
 {
-  // Citra-Standalone, CITraces - https://t.me/citraintegritytrick/3 - Citra, a standalone implementation, leaves a trace in IoT.
-    
   "TYPE": "user",
   "TAGS": "release-keys",
   "ID": "$ID",
@@ -195,7 +192,8 @@ EOF
   "SECURITY_PATCH": "2024-09-05",
   "DEVICE_INITIAL_SDK_INT": 21,
   "spoofSignature": $spoofsignature
-} //Citra-Standalone
+}
+// Citra-Standalone x Ox010b
 EOF
         echo "> Successfully generated pif.json."
         
@@ -203,7 +201,4 @@ EOF
 else
     echo "! PlayIntegrityFix not found"
 fi
-cleaner
-killall -v com.google.android.gms >> /dev/null;
-killall -v com.google.android.gms.unstable >> /dev/null;
 echo "=== ENDED ==="
